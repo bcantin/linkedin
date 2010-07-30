@@ -1,13 +1,27 @@
 module LinkedIn
   class Client
-
+    
+    # private
     # TODO: @ http://developer.linkedin.com/docs/DOC-1061 && / DOC-1014
     # add in client.get("/people/~:(im-accounts)")
     #        client.get("/people/~:(twitter-accounts)")
     #        client.get("/people/~:(date-of-birth)")
     #        client.get("/people/~:(main-address)")
+    
+    
     attr_reader :ctoken, :csecret, :consumer_options
-
+    
+    # Create the Api Client
+    #
+    # If an initializer was created in a config/initializer
+    # then there is no need to pass in a ctoken or csecret
+    #
+    # @param ctoken  [String] LinkedIn token
+    # @param csecret [String] LinkedIn secret
+    # @param options [Hash] a hash to overwrite oauth defaults
+    # @example
+    #   client = LinkedIn::Client.new
+    #   client = LinkedIn::Client.new('your_consumer_key', 'your_consumer_secret')
     def initialize(ctoken=LinkedIn.token, csecret=LinkedIn.secret, options={})
       opts = {
         :request_token_path => "/uas/oauth/requestToken",
@@ -25,16 +39,19 @@ module LinkedIn
       clear_request_token
       request_token(:oauth_callback => url)
     end
-
-    # Note: If using oauth with a web app, be sure to provide :oauth_callback.
-    # Options:
-    #   :oauth_callback => String, url that LinkedIn should redirect to
+    
+    # If you are using oauth with a web app, be sure to provide :oauth_callback.
+    # as this is where your client will be redirected upon a successful
+    # authentication from linkedin.
+    # @param options [Hash]
+    # @example
+    #   client.request_token(:oauth_callback => 'http://example.com/linkedin_profile')
     def request_token(options={})
       @request_token ||= consumer.get_request_token(options)
     end
 
-    # For web apps use params[:oauth_verifier], for desktop apps,
-    # use the verifier is the pin that LinkedIn gives users.
+    # For web apps use params[:oauth_verifier].
+    # For desktop apps, use the verifier is the pin that LinkedIn gives users.
     def authorize_from_request(rtoken, rsecret, verifier_or_pin)
       request_token = ::OAuth::RequestToken.new(consumer, rtoken, rsecret)
       access_token = request_token.get_access_token(:oauth_verifier => verifier_or_pin)
@@ -49,14 +66,21 @@ module LinkedIn
       @atoken, @asecret = atoken, asecret
     end
 
+    # Using a get request to linkedin, we can access the users information
+    # @param path [String] a partial url path
+    # @param options [Hash] a way to narrow down the amount of detail returned
     def get(path, options={})
       path = "/v1#{path}"
       response = access_token.get(path, options)
       raise_errors(response)
       response.body
     end
-
-
+    
+    # Using a post request to linkedin, we can send messages 
+    # @param path [String] a partial url path
+    # @param body= [String] the message our user wants to send
+    # @param options [Hash]
+    # @return a HTTP responce (200,404,500,...)
     def post(path, body='', options={})
       path = "/v1#{path}"
       response = access_token.post(path, body, options)

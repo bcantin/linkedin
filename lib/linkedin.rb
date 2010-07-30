@@ -1,21 +1,7 @@
-# require 'forwardable'
-# require 'rubygems'
-#
-gem 'oauth', '~> 0.3.5'
 require 'oauth'
-
 require 'nokogiri'
-
-gem 'crack', '~> 0.1.4'
 require 'crack'
-
 require 'cgi'
-
-# class Nokogiri::XML::Element
-#   def has_key?(key)
-#     self.keys.include?(key)
-#   end
-# end
 
 module LinkedIn
   class LinkedInError < StandardError
@@ -31,40 +17,42 @@ module LinkedIn
   class Unauthorized      < LinkedInError; end
   class General           < LinkedInError; end
 
-  class Unavailable   < StandardError; end
+  class Unavailable    < StandardError; end
   class InformLinkedIn < StandardError; end
-  class NotFound      < StandardError; end
-
-  # config/initializers/linkedin.rb (for instance)
-  #
-  # LinkedIn.configure do |config|
-  #   config.token = 'consumer_token'
-  #   config.secret = 'consumer_secret'
-  # end
-  #
-  # elsewhere
-  #
-  # client = LinkedIn::Client.new
+  class NotFound       < StandardError; end
+  
+  # Configure the library for use with the Linkedin token and Linkedin secret
+  # using a config/initializer (as found in a Rails application)
+  # @example
+  #   # config/initializers/linkedin.rb
+  #   LinkedIn.configure do |config|
+  #     config.token = 'consumer_token'
+  #     config.secret = 'consumer_secret'
+  #   end
   def self.configure
     yield self
 
-    LinkedIn.token = token
+    LinkedIn.token  = token
     LinkedIn.secret = secret
     true
   end
-
+  
+  # a getter for the token
   def self.token
     @token
   end
 
+  # a setter for the token
   def self.token=(token)
     @token = token
   end
-
+  
+  # a getter for the secret
   def self.secret
     @secret
   end
-
+  
+  # a setter for the secret
   def self.secret=(secret)
     @secret = secret
   end

@@ -1,0 +1,1917 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Content-Type" content="text/html; charset=utf-8" />
+<title>Class: LinkedIn::Client</title>
+<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '..';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (C)</a> &raquo; 
+    <span class='title'><a href="../LinkedIn.html" title="LinkedIn (module)">LinkedIn</a></span>
+     &raquo; 
+    <span class="title">Client</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: LinkedIn::Client
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">LinkedIn::Client</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/linked_in/client.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#consumer_options-instance_method" title="#consumer_options (instance method)">- (Object) <strong>consumer_options</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title readonly">readonly</span>
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Returns the value of attribute consumer_options.
+</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#csecret-instance_method" title="#csecret (instance method)">- (Object) <strong>csecret</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title readonly">readonly</span>
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Returns the value of attribute csecret.
+</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ctoken-instance_method" title="#ctoken (instance method)">- (Object) <strong>ctoken</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title readonly">readonly</span>
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Returns the value of attribute ctoken.
+</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#access_token-instance_method" title="#access_token (instance method)">- (Object) <strong>access_token</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#authorize_from_access-instance_method" title="#authorize_from_access (instance method)">- (Object) <strong>authorize_from_access</strong>(atoken, asecret) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#authorize_from_request-instance_method" title="#authorize_from_request (instance method)">- (Object) <strong>authorize_from_request</strong>(rtoken, rsecret, verifier_or_pin) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+For web apps use params[:oauth_verifier].
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#birthdate-instance_method" title="#birthdate (instance method)">- (Object) <strong>birthdate</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+usage:.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#clear_status-instance_method" title="#clear_status (instance method)">- (Object) <strong>clear_status</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#connections-instance_method" title="#connections (instance method)">- (Object) <strong>connections</strong>(options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#consumer-instance_method" title="#consumer (instance method)">- (Object) <strong>consumer</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#current_status-instance_method" title="#current_status (instance method)">- (Object) <strong>current_status</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#delete-instance_method" title="#delete (instance method)">- (Object) <strong>delete</strong>(path, options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get-instance_method" title="#get (instance method)">- (Object) <strong>get</strong>(path, options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Using a get request to linkedin, we can access the users information.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Client) <strong>initialize</strong>(ctoken = LinkedIn.token, csecret = LinkedIn.secret, options = {}) </a>
+    
+
+    
+  </span>
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Create the Api Client.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#network_statuses-instance_method" title="#network_statuses (instance method)">- (Object) <strong>network_statuses</strong>(options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#network_updates-instance_method" title="#network_updates (instance method)">- (Object) <strong>network_updates</strong>(options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#post-instance_method" title="#post (instance method)">- (Object) <strong>post</strong>(path, body = '', options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Using a post request to linkedin, we can send messages.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#profile-instance_method" title="#profile (instance method)">- (Object) <strong>profile</strong>(options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#put-instance_method" title="#put (instance method)">- (Object) <strong>put</strong>(path, body, options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#request_token-instance_method" title="#request_token (instance method)">- (Object) <strong>request_token</strong>(options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+If you are using oauth with a web app, be sure to provide :oauth_callback.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#search-instance_method" title="#search (instance method)">- (Object) <strong>search</strong>(options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#send_message-instance_method" title="#send_message (instance method)">- (Object) <strong>send_message</strong>(subject, body, recipient_paths) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_callback_url-instance_method" title="#set_callback_url (instance method)">- (Object) <strong>set_callback_url</strong>(url) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#update_comment-instance_method" title="#update_comment (instance method)">- (Object) <strong>update_comment</strong>(network_key, comment) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#update_status-instance_method" title="#update_status (instance method)">- (Object) <strong>update_status</strong>(text) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#write_fixture-instance_method" title="#write_fixture (instance method)">- (Object) <strong>write_fixture</strong>(path, filename) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+helpful in making authenticated calls and writing the raw xml to a fixture
+file.
+</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <p class="signature first" id="initialize-instance_method">
+  
+    - (<tt><a href="" title="LinkedIn::Client (class)">Client</a></tt>) <strong>initialize</strong>(ctoken = LinkedIn.token, csecret = LinkedIn.secret, options = {}) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Create the Api Client
+</p>
+<p>
+If an initializer was created in a config/initializer then there is no need
+to pass in a ctoken or csecret
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='id client'>client</span> <span class='op'>=</span> <span class='const'>LinkedIn</span><span class='op'>::</span><span class='const'>Client</span><span class='period'>.</span><span class='id new'>new</span>
+<span class='id client'>client</span> <span class='op'>=</span> <span class='const'>LinkedIn</span><span class='op'>::</span><span class='const'>Client</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>your_consumer_key</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>your_consumer_secret</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre>
+    
+  </div>
+<h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <span class='name'>ctoken</span>
+      
+      
+        <em class="default">(defaults to: <tt>LinkedIn.token</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>
+LinkedIn token
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <span class='name'>csecret</span>
+      
+      
+        <em class="default">(defaults to: <tt>LinkedIn.secret</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>
+LinkedIn secret
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <span class='name'>options</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>
+a hash to overwrite oauth defaults
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25
+26
+27
+28
+29
+30
+31
+32</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 25</span>
+
+<span class='kw'>def</span> <span class='id initialize'>initialize</span><span class='lparen'>(</span><span class='id ctoken'>ctoken</span><span class='op'>=</span><span class='const'>LinkedIn</span><span class='period'>.</span><span class='id token'>token</span><span class='comma'>,</span> <span class='id csecret'>csecret</span><span class='op'>=</span><span class='const'>LinkedIn</span><span class='period'>.</span><span class='id secret'>secret</span><span class='comma'>,</span> <span class='id options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+    <span class='symbol'>:request_token_path</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/uas/oauth/requestToken</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='symbol'>:access_token_path</span>  <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/uas/oauth/accessToken</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='symbol'>:authorize_path</span>     <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/uas/oauth/authorize</span><span class='tstring_end'>&quot;</span></span>
+  <span class='rbrace'>}</span>
+  <span class='ivar'>@ctoken</span><span class='comma'>,</span> <span class='ivar'>@csecret</span><span class='comma'>,</span> <span class='ivar'>@consumer_options</span> <span class='op'>=</span> <span class='id ctoken'>ctoken</span><span class='comma'>,</span> <span class='id csecret'>csecret</span><span class='comma'>,</span> <span class='id opts'>opts</span><span class='period'>.</span><span class='id merge'>merge</span><span class='lparen'>(</span><span class='id options'>options</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id=""></span>
+      <span id="consumer_options-instance_method"></span>
+      <div class="method_details first">
+  <p class="signature first" id="consumer_options-instance_method">
+  
+    - (<tt>Object</tt>) <strong>consumer_options</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the value of attribute consumer_options
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+12
+13
+14</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 12</span>
+
+<span class='kw'>def</span> <span class='id consumer_options'>consumer_options</span>
+  <span class='ivar'>@consumer_options</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <span id="csecret-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="csecret-instance_method">
+  
+    - (<tt>Object</tt>) <strong>csecret</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the value of attribute csecret
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+12
+13
+14</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 12</span>
+
+<span class='kw'>def</span> <span class='id csecret'>csecret</span>
+  <span class='ivar'>@csecret</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <span id="ctoken-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="ctoken-instance_method">
+  
+    - (<tt>Object</tt>) <strong>ctoken</strong>  <span class="extras">(readonly)</span>
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the value of attribute ctoken
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+12
+13
+14</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 12</span>
+
+<span class='kw'>def</span> <span class='id ctoken'>ctoken</span>
+  <span class='ivar'>@ctoken</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="access_token-instance_method">
+  
+    - (<tt>Object</tt>) <strong>access_token</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+61
+62
+63</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 61</span>
+
+<span class='kw'>def</span> <span class='id access_token'>access_token</span>
+  <span class='ivar'>@access_token</span> <span class='op'>||=</span> <span class='op'>::</span><span class='const'>OAuth</span><span class='op'>::</span><span class='const'>AccessToken</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id consumer'>consumer</span><span class='comma'>,</span> <span class='ivar'>@atoken</span><span class='comma'>,</span> <span class='ivar'>@asecret</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="authorize_from_access-instance_method">
+  
+    - (<tt>Object</tt>) <strong>authorize_from_access</strong>(atoken, asecret) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+65
+66
+67</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 65</span>
+
+<span class='kw'>def</span> <span class='id authorize_from_access'>authorize_from_access</span><span class='lparen'>(</span><span class='id atoken'>atoken</span><span class='comma'>,</span> <span class='id asecret'>asecret</span><span class='rparen'>)</span>
+  <span class='ivar'>@atoken</span><span class='comma'>,</span> <span class='ivar'>@asecret</span> <span class='op'>=</span> <span class='id atoken'>atoken</span><span class='comma'>,</span> <span class='id asecret'>asecret</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="authorize_from_request-instance_method">
+  
+    - (<tt>Object</tt>) <strong>authorize_from_request</strong>(rtoken, rsecret, verifier_or_pin) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+For web apps use params[:oauth_verifier]. For desktop apps, use the
+verifier is the pin that LinkedIn gives users.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+55
+56
+57
+58
+59</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 55</span>
+
+<span class='kw'>def</span> <span class='id authorize_from_request'>authorize_from_request</span><span class='lparen'>(</span><span class='id rtoken'>rtoken</span><span class='comma'>,</span> <span class='id rsecret'>rsecret</span><span class='comma'>,</span> <span class='id verifier_or_pin'>verifier_or_pin</span><span class='rparen'>)</span>
+  <span class='id request_token'>request_token</span> <span class='op'>=</span> <span class='op'>::</span><span class='const'>OAuth</span><span class='op'>::</span><span class='const'>RequestToken</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id consumer'>consumer</span><span class='comma'>,</span> <span class='id rtoken'>rtoken</span><span class='comma'>,</span> <span class='id rsecret'>rsecret</span><span class='rparen'>)</span>
+  <span class='id access_token'>access_token</span> <span class='op'>=</span> <span class='id request_token'>request_token</span><span class='period'>.</span><span class='id get_access_token'>get_access_token</span><span class='lparen'>(</span><span class='symbol'>:oauth_verifier</span> <span class='op'>=&gt;</span> <span class='id verifier_or_pin'>verifier_or_pin</span><span class='rparen'>)</span>
+  <span class='ivar'>@atoken</span><span class='comma'>,</span> <span class='ivar'>@asecret</span> <span class='op'>=</span> <span class='id access_token'>access_token</span><span class='period'>.</span><span class='id token'>token</span><span class='comma'>,</span> <span class='id access_token'>access_token</span><span class='period'>.</span><span class='id secret'>secret</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="birthdate-instance_method">
+  
+    - (<tt>Object</tt>) <strong>birthdate</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+usage:
+</p>
+<pre class="code">
+   <span class='id dob'>dob</span> <span class='op'>=</span> <span class='id client'>client</span><span class='period'>.</span><span class='id birthdate'>birthdate</span>
+     <span class='id returns'>returns</span> <span class='id a'>a</span> <span class='id birthdate'>birthdate</span> <span class='id object'>object</span> <span class='id allowing'>allowing</span> <span class='id access'>access</span> <span class='id to'>to</span> <span class='id day'>day</span><span class='comma'>,</span> <span class='id month'>month</span><span class='comma'>,</span> <span class='id year'>year</span>
+     <span class='id dob'>dob</span><span class='period'>.</span><span class='id to_date'>to_date</span> <span class='id will'>will</span> <span class='kw'>return</span> <span class='id a'>a</span> <span class='const'>DATE</span> <span class='id object'>object</span></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+140
+141
+142
+143</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 140</span>
+
+<span class='kw'>def</span> <span class='id birthdate'>birthdate</span>
+  <span class='id path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/people/~:(date-of-birth)</span><span class='tstring_end'>&quot;</span></span>
+  <span class='const'>Birthdate</span><span class='period'>.</span><span class='id from_xml'>from_xml</span><span class='lparen'>(</span><span class='id get'>get</span><span class='lparen'>(</span><span class='id path'>path</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="clear_status-instance_method">
+  
+    - (<tt>Object</tt>) <strong>clear_status</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+168
+169
+170
+171</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 168</span>
+
+<span class='kw'>def</span> <span class='id clear_status'>clear_status</span>
+  <span class='id path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/people/~/current-status</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id delete'>delete</span><span class='lparen'>(</span><span class='id path'>path</span><span class='rparen'>)</span><span class='period'>.</span><span class='id code'>code</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="connections-instance_method">
+  
+    - (<tt>Object</tt>) <strong>connections</strong>(options = {}) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 121</span>
+
+<span class='kw'>def</span> <span class='id connections'>connections</span><span class='lparen'>(</span><span class='id options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id person_path'>person_path</span><span class='lparen'>(</span><span class='id options'>options</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='tstring_content'>/connections</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='kw'>unless</span> <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:fields</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id nil?'>nil?</span>
+    <span class='kw'>if</span> <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:public</span><span class='rbracket'>]</span>
+      <span class='id path'>path</span> <span class='op'>+=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>:public</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>else</span>
+      <span class='id path'>path</span> <span class='op'>+=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>:(</span><span class='embexpr_beg'>#{</span><span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:fields</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id f'>f</span><span class='op'>|</span> <span class='id f'>f</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='period'>.</span><span class='id gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>_</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>,</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='const'>Connections</span><span class='period'>.</span><span class='id from_xml'>from_xml</span><span class='lparen'>(</span><span class='id get'>get</span><span class='lparen'>(</span><span class='id path'>path</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='period'>.</span><span class='id profiles'>profiles</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="consumer-instance_method">
+  
+    - (<tt>Object</tt>) <strong>consumer</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+34
+35
+36</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 34</span>
+
+<span class='kw'>def</span> <span class='id consumer'>consumer</span>
+  <span class='ivar'>@consumer</span> <span class='op'>||=</span> <span class='op'>::</span><span class='const'>OAuth</span><span class='op'>::</span><span class='const'>Consumer</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='ivar'>@ctoken</span><span class='comma'>,</span> <span class='ivar'>@csecret</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='symbol'>:site</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>https://api.linkedin.com</span><span class='tstring_end'>'</span></span><span class='rbrace'>}</span><span class='period'>.</span><span class='id merge'>merge</span><span class='lparen'>(</span><span class='ivar'>@consumer_options</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="current_status-instance_method">
+  
+    - (<tt>Object</tt>) <strong>current_status</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+153
+154
+155
+156</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 153</span>
+
+<span class='kw'>def</span> <span class='id current_status'>current_status</span>
+  <span class='id path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/people/~/current-status</span><span class='tstring_end'>&quot;</span></span>
+  <span class='const'>Crack</span><span class='op'>::</span><span class='const'>XML</span><span class='period'>.</span><span class='id parse'>parse</span><span class='lparen'>(</span><span class='id get'>get</span><span class='lparen'>(</span><span class='id path'>path</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>current_status</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="delete-instance_method">
+  
+    - (<tt>Object</tt>) <strong>delete</strong>(path, options = {}) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+98
+99
+100
+101
+102
+103</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 98</span>
+
+<span class='kw'>def</span> <span class='id delete'>delete</span><span class='lparen'>(</span><span class='id path'>path</span><span class='comma'>,</span> <span class='id options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/v1</span><span class='embexpr_beg'>#{</span><span class='id path'>path</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id response'>response</span> <span class='op'>=</span> <span class='id access_token'>access_token</span><span class='period'>.</span><span class='id delete'>delete</span><span class='lparen'>(</span><span class='id path'>path</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+  <span class='id raise_errors'>raise_errors</span><span class='lparen'>(</span><span class='id response'>response</span><span class='rparen'>)</span>
+  <span class='id response'>response</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="get-instance_method">
+  
+    - (<tt>Object</tt>) <strong>get</strong>(path, options = {}) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Using a get request to linkedin, we can access the users information
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <span class='name'>path</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+a partial url path
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <span class='name'>options</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>
+a way to narrow down the amount of detail returned
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+72
+73
+74
+75
+76
+77</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 72</span>
+
+<span class='kw'>def</span> <span class='id get'>get</span><span class='lparen'>(</span><span class='id path'>path</span><span class='comma'>,</span> <span class='id options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/v1</span><span class='embexpr_beg'>#{</span><span class='id path'>path</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id response'>response</span> <span class='op'>=</span> <span class='id access_token'>access_token</span><span class='period'>.</span><span class='id get'>get</span><span class='lparen'>(</span><span class='id path'>path</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+  <span class='id raise_errors'>raise_errors</span><span class='lparen'>(</span><span class='id response'>response</span><span class='rparen'>)</span>
+  <span class='id response'>response</span><span class='period'>.</span><span class='id body'>body</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="network_statuses-instance_method">
+  
+    - (<tt>Object</tt>) <strong>network_statuses</strong>(options = {}) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+192
+193
+194
+195</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 192</span>
+
+<span class='kw'>def</span> <span class='id network_statuses'>network_statuses</span><span class='lparen'>(</span><span class='id options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:type</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>STAT</span><span class='tstring_end'>'</span></span>
+  <span class='id network_updates'>network_updates</span><span class='lparen'>(</span><span class='id options'>options</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="network_updates-instance_method">
+  
+    - (<tt>Object</tt>) <strong>network_updates</strong>(options = {}) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+197
+198
+199
+200</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 197</span>
+
+<span class='kw'>def</span> <span class='id network_updates'>network_updates</span><span class='lparen'>(</span><span class='id options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/people/~/network</span><span class='tstring_end'>&quot;</span></span>
+  <span class='const'>Network</span><span class='period'>.</span><span class='id from_xml'>from_xml</span><span class='lparen'>(</span><span class='id get'>get</span><span class='lparen'>(</span><span class='id to_uri'>to_uri</span><span class='lparen'>(</span><span class='id path'>path</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="post-instance_method">
+  
+    - (<tt>Object</tt>) <strong>post</strong>(path, body = '', options = {}) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Using a post request to linkedin, we can send messages
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <span class='name'>path</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+a partial url path
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <span class='name'>body=</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+the message our user wants to send
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <span class='name'>options</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+      
+        
+        <div class='inline'><p>
+a HTTP responce (200,404,500,&#8230;)
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+84
+85
+86
+87
+88
+89</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 84</span>
+
+<span class='kw'>def</span> <span class='id post'>post</span><span class='lparen'>(</span><span class='id path'>path</span><span class='comma'>,</span> <span class='id body'>body</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/v1</span><span class='embexpr_beg'>#{</span><span class='id path'>path</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id response'>response</span> <span class='op'>=</span> <span class='id access_token'>access_token</span><span class='period'>.</span><span class='id post'>post</span><span class='lparen'>(</span><span class='id path'>path</span><span class='comma'>,</span> <span class='id body'>body</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+  <span class='id raise_errors'>raise_errors</span><span class='lparen'>(</span><span class='id response'>response</span><span class='rparen'>)</span>
+  <span class='id response'>response</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="profile-instance_method">
+  
+    - (<tt>Object</tt>) <strong>profile</strong>(options = {}) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 106</span>
+
+<span class='kw'>def</span> <span class='id profile'>profile</span><span class='lparen'>(</span><span class='id options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+
+  <span class='id path'>path</span> <span class='op'>=</span> <span class='id person_path'>person_path</span><span class='lparen'>(</span><span class='id options'>options</span><span class='rparen'>)</span>
+
+  <span class='kw'>unless</span> <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:fields</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id nil?'>nil?</span>
+    <span class='kw'>if</span> <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:public</span><span class='rbracket'>]</span>
+      <span class='id path'>path</span> <span class='op'>+=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>:public</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>else</span>
+      <span class='id path'>path</span> <span class='op'>+=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>:(</span><span class='embexpr_beg'>#{</span><span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:fields</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id f'>f</span><span class='op'>|</span> <span class='id f'>f</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='period'>.</span><span class='id gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>_</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>,</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='const'>Profile</span><span class='period'>.</span><span class='id from_xml'>from_xml</span><span class='lparen'>(</span><span class='id get'>get</span><span class='lparen'>(</span><span class='id path'>path</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="put-instance_method">
+  
+    - (<tt>Object</tt>) <strong>put</strong>(path, body, options = {}) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+91
+92
+93
+94
+95
+96</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 91</span>
+
+<span class='kw'>def</span> <span class='id put'>put</span><span class='lparen'>(</span><span class='id path'>path</span><span class='comma'>,</span> <span class='id body'>body</span><span class='comma'>,</span> <span class='id options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/v1</span><span class='embexpr_beg'>#{</span><span class='id path'>path</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id response'>response</span> <span class='op'>=</span> <span class='id access_token'>access_token</span><span class='period'>.</span><span class='id put'>put</span><span class='lparen'>(</span><span class='id path'>path</span><span class='comma'>,</span> <span class='id body'>body</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+  <span class='id raise_errors'>raise_errors</span><span class='lparen'>(</span><span class='id response'>response</span><span class='rparen'>)</span>
+  <span class='id response'>response</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="request_token-instance_method">
+  
+    - (<tt>Object</tt>) <strong>request_token</strong>(options = {}) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+If you are using oauth with a web app, be sure to provide :oauth_callback.
+as this is where your client will be redirected upon a successful
+authentication from linkedin.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='id client'>client</span><span class='period'>.</span><span class='id request_token'>request_token</span><span class='lparen'>(</span><span class='symbol'>:oauth_callback</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>http://example.com/linkedin_profile</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span></pre>
+    
+  </div>
+<h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <span class='name'>options</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+49
+50
+51</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 49</span>
+
+<span class='kw'>def</span> <span class='id request_token'>request_token</span><span class='lparen'>(</span><span class='id options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='ivar'>@request_token</span> <span class='op'>||=</span> <span class='id consumer'>consumer</span><span class='period'>.</span><span class='id get_request_token'>get_request_token</span><span class='lparen'>(</span><span class='id options'>options</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="search-instance_method">
+  
+    - (<tt>Object</tt>) <strong>search</strong>(options = {}) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+145
+146
+147
+148
+149
+150
+151</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 145</span>
+
+<span class='kw'>def</span> <span class='id search'>search</span><span class='lparen'>(</span><span class='id options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/people</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='symbol'>:keywords</span> <span class='op'>=&gt;</span> <span class='id options'>options</span><span class='rbrace'>}</span> <span class='kw'>if</span> <span class='id options'>options</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>String</span><span class='rparen'>)</span>
+  <span class='id options'>options</span> <span class='op'>=</span> <span class='id format_options_for_query'>format_options_for_query</span><span class='lparen'>(</span><span class='id options'>options</span><span class='rparen'>)</span>
+
+  <span class='const'>People</span><span class='period'>.</span><span class='id from_xml'>from_xml</span><span class='lparen'>(</span><span class='id get'>get</span><span class='lparen'>(</span><span class='id to_uri'>to_uri</span><span class='lparen'>(</span><span class='id path'>path</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="send_message-instance_method">
+  
+    - (<tt>Object</tt>) <strong>send_message</strong>(subject, body, recipient_paths) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 173</span>
+
+<span class='kw'>def</span> <span class='id send_message'>send_message</span><span class='lparen'>(</span><span class='id subject'>subject</span><span class='comma'>,</span> <span class='id body'>body</span><span class='comma'>,</span> <span class='id recipient_paths'>recipient_paths</span><span class='rparen'>)</span>
+  <span class='id path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/people/~/mailbox</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='id message'>message</span>         <span class='op'>=</span> <span class='const'>LinkedIn</span><span class='op'>::</span><span class='const'>Message</span><span class='period'>.</span><span class='id new'>new</span>
+  <span class='id message'>message</span><span class='period'>.</span><span class='id subject'>subject</span> <span class='op'>=</span> <span class='id subject'>subject</span>
+  <span class='id message'>message</span><span class='period'>.</span><span class='id body'>body</span>    <span class='op'>=</span> <span class='id body'>body</span>
+  <span class='id recipients'>recipients</span>      <span class='op'>=</span> <span class='const'>LinkedIn</span><span class='op'>::</span><span class='const'>Recipients</span><span class='period'>.</span><span class='id new'>new</span>
+
+  <span class='id recipients'>recipients</span><span class='period'>.</span><span class='id recipients'>recipients</span> <span class='op'>=</span> <span class='id recipient_paths'>recipient_paths</span><span class='period'>.</span><span class='id map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id profile_path'>profile_path</span><span class='op'>|</span>
+    <span class='id recipient'>recipient</span>             <span class='op'>=</span> <span class='const'>LinkedIn</span><span class='op'>::</span><span class='const'>Recipient</span><span class='period'>.</span><span class='id new'>new</span>
+    <span class='id recipient'>recipient</span><span class='period'>.</span><span class='id person'>person</span>      <span class='op'>=</span> <span class='const'>LinkedIn</span><span class='op'>::</span><span class='const'>Person</span><span class='period'>.</span><span class='id new'>new</span>
+    <span class='id recipient'>recipient</span><span class='period'>.</span><span class='id person'>person</span><span class='period'>.</span><span class='id path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/people/</span><span class='embexpr_beg'>#{</span><span class='id profile_path'>profile_path</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id recipient'>recipient</span>
+  <span class='kw'>end</span>
+
+  <span class='id message'>message</span><span class='period'>.</span><span class='id recipients'>recipients</span> <span class='op'>=</span> <span class='id recipients'>recipients</span>
+  <span class='id post'>post</span><span class='lparen'>(</span><span class='id path'>path</span><span class='comma'>,</span> <span class='id message_to_xml'>message_to_xml</span><span class='lparen'>(</span><span class='id message'>message</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Content-Type</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>text/xml</span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span><span class='rparen'>)</span><span class='period'>.</span><span class='id code'>code</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="set_callback_url-instance_method">
+  
+    - (<tt>Object</tt>) <strong>set_callback_url</strong>(url) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+38
+39
+40
+41</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 38</span>
+
+<span class='kw'>def</span> <span class='id set_callback_url'>set_callback_url</span><span class='lparen'>(</span><span class='id url'>url</span><span class='rparen'>)</span>
+  <span class='id clear_request_token'>clear_request_token</span>
+  <span class='id request_token'>request_token</span><span class='lparen'>(</span><span class='symbol'>:oauth_callback</span> <span class='op'>=&gt;</span> <span class='id url'>url</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="update_comment-instance_method">
+  
+    - (<tt>Object</tt>) <strong>update_comment</strong>(network_key, comment) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+163
+164
+165
+166</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 163</span>
+
+<span class='kw'>def</span> <span class='id update_comment'>update_comment</span><span class='lparen'>(</span><span class='id network_key'>network_key</span><span class='comma'>,</span> <span class='id comment'>comment</span><span class='rparen'>)</span>
+  <span class='id path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/people/~/network/updates/key=</span><span class='embexpr_beg'>#{</span><span class='id network_key'>network_key</span><span class='rbrace'>}</span><span class='tstring_content'>/update-comments</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id post'>post</span><span class='lparen'>(</span><span class='id path'>path</span><span class='comma'>,</span><span class='id comment_to_xml'>comment_to_xml</span><span class='lparen'>(</span><span class='id comment'>comment</span><span class='rparen'>)</span><span class='comma'>,</span><span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Content-Type</span><span class='tstring_end'>'</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>application/xml</span><span class='tstring_end'>'</span></span><span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="update_status-instance_method">
+  
+    - (<tt>Object</tt>) <strong>update_status</strong>(text) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+158
+159
+160
+161</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 158</span>
+
+<span class='kw'>def</span> <span class='id update_status'>update_status</span><span class='lparen'>(</span><span class='id text'>text</span><span class='rparen'>)</span>
+  <span class='id path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/people/~/current-status</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id put'>put</span><span class='lparen'>(</span><span class='id path'>path</span><span class='comma'>,</span> <span class='id status_to_xml'>status_to_xml</span><span class='lparen'>(</span><span class='id text'>text</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="write_fixture-instance_method">
+  
+    - (<tt>Object</tt>) <strong>write_fixture</strong>(path, filename) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+helpful in making authenticated calls and writing the raw xml to a fixture
+file
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+204
+205
+206
+207
+208</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 204</span>
+
+<span class='kw'>def</span> <span class='id write_fixture'>write_fixture</span><span class='lparen'>(</span><span class='id path'>path</span><span class='comma'>,</span> <span class='id filename'>filename</span><span class='rparen'>)</span>
+  <span class='id file'>file</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>test/fixtures/</span><span class='embexpr_beg'>#{</span><span class='id filename'>filename</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>w</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id file'>file</span><span class='period'>.</span><span class='id puts'>puts</span><span class='lparen'>(</span><span class='id access_token'>access_token</span><span class='period'>.</span><span class='id get'>get</span><span class='lparen'>(</span><span class='id path'>path</span><span class='rparen'>)</span><span class='period'>.</span><span class='id body'>body</span><span class='rparen'>)</span>
+  <span class='id file'>file</span><span class='period'>.</span><span class='id close'>close</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Fri Jul 30 13:27:24 2010 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
+  0.5.8 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

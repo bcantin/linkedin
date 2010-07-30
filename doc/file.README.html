@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Content-Type" content="text/html; charset=utf-8" />
+<title>Documentation by YARD 0.5.8</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html" title="Index">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><div id='filecontents'><h1>LinkedIn</h1>
+
+<p>Ruby wrapper for the <a href="http://developer.linkedin.com">LinkedIn API</a>. Heavily inspired by <a href="http://github.com/jnunemaker">John Nunemaker's</a> <a href="http://github.com/jnunemaker/twitter">Twitter gem</a>, the LinkedIn gem provides an easy-to-use wrapper for LinkedIn's Oauth/XML APIs.</p>
+
+<h2>Installation</h2>
+
+<pre class="code"><span class='id sudo'>sudo</span> <span class='id gem'>gem</span> <span class='id install'>install</span> <span class='id gemcutter'>gemcutter</span>
+<span class='id gem'>gem</span> <span class='id tumble'>tumble</span>
+<span class='id sudo'>sudo</span> <span class='id gem'>gem</span> <span class='id install'>install</span> <span class='id linkedin'>linkedin</span>
+</pre>
+
+<p>Or in your Gemfile, if you use bundler</p>
+
+<pre class="code"><span class='id gem'>gem</span> <span class='id linkedin'>linkedin</span>
+</pre>
+
+<h2>Usage</h2>
+
+<h3>Authenticate</h3>
+
+<p>LinkedIn's API uses Oauth for authentication. Luckily, the LinkedIn gem hides most of the gory details from you.  Test it out in IRB.</p>
+
+<pre class="code">require 'rubygems'
+require 'linkedin'
+
+# get your api keys at https://www.linkedin.com/secure/developer
+client = LinkedIn::Client.new('your_consumer_key', 'your_consumer_secret')
+rtoken = client.request_token.token
+rsecret = client.request_token.secret
+
+# to test from your desktop, open the following url in your browser
+# and record the pin it gives you
+client.request_token.authorize_url
+=&gt; &quot;https://api.linkedin.com/uas/oauth/authorize?oauth_token=&lt;generated_token&gt;&quot;
+
+# then fetch your access keys
+client.authorize_from_request(rtoken, rsecret, pin)
+=&gt; [&quot;OU812&quot;, &quot;8675309&quot;] # &lt;= save these for future requests
+
+# or authorize from previously fetched access keys
+c.authorize_from_access(&quot;OU812&quot;, &quot;8675309&quot;)
+
+# you're now free to move about the cabin, call any API method
+</pre>
+
+<h3>Profile examples</h3>
+
+<pre class="code"><span class='comment'># get the profile for the authenticated user
+</span><span class='id client'>client</span><span class='period'>.</span><span class='id profile'>profile</span>
+
+<span class='comment'># get a profile for someone found in network via ID
+</span><span class='id client'>client</span><span class='period'>.</span><span class='id profile'>profile</span><span class='lparen'>(</span><span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>gNma67_AdI</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+<span class='comment'># get a profile for someone via their public profile url
+</span><span class='id client'>client</span><span class='period'>.</span><span class='id profile'>profile</span><span class='lparen'>(</span><span class='symbol'>:url</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>http://www.linkedin.com/in/netherland</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+</pre>
+
+<p>More examples in the <a href="http://github.com/pengwynn/linkedin/blob/master/examples">examples folder</a>.</p>
+
+<h3>Rails</h3>
+
+<p>Are you using this gem with a rails project?  Check out this <a href="http://pivotallabs.com/users/will/blog/articles/1096-linkedin-gem-for-a-web-app">example</a>.</p>
+
+<p>If that post is down, check out examples/RailsReadMe.rb</p>
+
+<h2>TODO</h2>
+
+<ul>
+<li>Implement Messaging APIs</li>
+</ul>
+
+
+<h2>Note on Patches/Pull Requests</h2>
+
+<ul>
+<li>Fork the project.</li>
+<li>Make your feature addition or bug fix.</li>
+<li>Add tests for it. This is important so I don't break it in
+a future version unintentionally.</li>
+<li>Commit, do not mess with rakefile, version, or history.
+(if you want to have your own version, that is fine but
+bump version in a commit by itself I can ignore when I pull)</li>
+<li>Send me a pull request. Bonus points for topic branches.</li>
+</ul>
+
+
+<p>Please run your tests using bundler to ensure consistency</p>
+
+<pre class="code"><span class='id bundle'>bundle</span> <span class='id exec'>exec</span> <span class='id rake'>rake</span>
+</pre>
+
+<h2>Copyright</h2>
+
+<p>Copyright (c) 2009 <a href="http://wynnnetherland.com">Wynn Netherland</a>. See LICENSE for details.</p></div></div>
+    
+    <div id="footer">
+  Generated on Fri Jul 30 13:27:24 2010 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
+  0.5.8 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

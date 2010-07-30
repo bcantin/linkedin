@@ -1,0 +1,481 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Content-Type" content="text/html; charset=utf-8" />
+<title>Module: LinkedIn</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (L)</a> &raquo; 
+    
+    
+    <span class="title">LinkedIn</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Module: LinkedIn
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/linkedin.rb<span class="defines">,<br />
+  lib/linked_in/base.rb,<br /> lib/linked_in/group.rb,<br /> lib/linked_in/error.rb,<br /> lib/linked_in/update.rb,<br /> lib/linked_in/person.rb,<br /> lib/linked_in/client.rb,<br /> lib/linked_in/people.rb,<br /> lib/linked_in/country.rb,<br /> lib/linked_in/profile.rb,<br /> lib/linked_in/company.rb,<br /> lib/linked_in/network.rb,<br /> lib/linked_in/message.rb,<br /> lib/linked_in/location.rb,<br /> lib/linked_in/position.rb,<br /> lib/linked_in/education.rb,<br /> lib/linked_in/recipient.rb,<br /> lib/linked_in/birthdate.rb,<br /> lib/linked_in/recipients.rb,<br /> lib/linked_in/connections.rb,<br /> lib/linked_in/url_resource.rb,<br /> lib/linked_in/api_standard_profile_request.rb</span>
+</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Defined Under Namespace</h2>
+<p class="children">
+   
+    
+   
+    
+      <strong class="classes">Classes:</strong> <a href="LinkedIn/ApiStandardProfileRequest.html" title="LinkedIn::ApiStandardProfileRequest (class)">ApiStandardProfileRequest</a>, <a href="LinkedIn/Base.html" title="LinkedIn::Base (class)">Base</a>, <a href="LinkedIn/Birthdate.html" title="LinkedIn::Birthdate (class)">Birthdate</a>, <a href="LinkedIn/Client.html" title="LinkedIn::Client (class)">Client</a>, <a href="LinkedIn/Company.html" title="LinkedIn::Company (class)">Company</a>, <a href="LinkedIn/Connections.html" title="LinkedIn::Connections (class)">Connections</a>, <a href="LinkedIn/Country.html" title="LinkedIn::Country (class)">Country</a>, <a href="LinkedIn/Education.html" title="LinkedIn::Education (class)">Education</a>, <a href="LinkedIn/Error.html" title="LinkedIn::Error (class)">Error</a>, <a href="LinkedIn/General.html" title="LinkedIn::General (class)">General</a>, <a href="LinkedIn/Group.html" title="LinkedIn::Group (class)">Group</a>, <a href="LinkedIn/InformLinkedIn.html" title="LinkedIn::InformLinkedIn (class)">InformLinkedIn</a>, <a href="LinkedIn/LinkedInError.html" title="LinkedIn::LinkedInError (class)">LinkedInError</a>, <a href="LinkedIn/Location.html" title="LinkedIn::Location (class)">Location</a>, <a href="LinkedIn/Message.html" title="LinkedIn::Message (class)">Message</a>, <a href="LinkedIn/Network.html" title="LinkedIn::Network (class)">Network</a>, <a href="LinkedIn/NotFound.html" title="LinkedIn::NotFound (class)">NotFound</a>, <a href="LinkedIn/People.html" title="LinkedIn::People (class)">People</a>, <a href="LinkedIn/Person.html" title="LinkedIn::Person (class)">Person</a>, <a href="LinkedIn/Position.html" title="LinkedIn::Position (class)">Position</a>, <a href="LinkedIn/Profile.html" title="LinkedIn::Profile (class)">Profile</a>, <a href="LinkedIn/RateLimitExceeded.html" title="LinkedIn::RateLimitExceeded (class)">RateLimitExceeded</a>, <a href="LinkedIn/Recipient.html" title="LinkedIn::Recipient (class)">Recipient</a>, <a href="LinkedIn/Recipients.html" title="LinkedIn::Recipients (class)">Recipients</a>, <a href="LinkedIn/Unauthorized.html" title="LinkedIn::Unauthorized (class)">Unauthorized</a>, <a href="LinkedIn/Unavailable.html" title="LinkedIn::Unavailable (class)">Unavailable</a>, <a href="LinkedIn/Update.html" title="LinkedIn::Update (class)">Update</a>, <a href="LinkedIn/UrlResource.html" title="LinkedIn::UrlResource (class)">UrlResource</a>
+    
+  
+</p>
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#configure-class_method" title="configure (class method)">+ (Object) <strong>configure</strong> {|_self| ... }</a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Configure the library for use with the Linkedin token and Linkedin secret
+using a config/initializer (as found in a Rails application).
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#secret-class_method" title="secret (class method)">+ (Object) <strong>secret</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+a getter for the secret.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#secret%3D-class_method" title="secret= (class method)">+ (Object) <strong>secret=</strong>(secret) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+a setter for the secret.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#token-class_method" title="token (class method)">+ (Object) <strong>token</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+a getter for the token.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#token%3D-class_method" title="token= (class method)">+ (Object) <strong>token=</strong>(token) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+a setter for the token.
+</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="configure-class_method">
+  
+    + (<tt>Object</tt>) <strong>configure</strong> {|_self| ... }
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Configure the library for use with the Linkedin token and Linkedin secret
+using a config/initializer (as found in a Rails application)
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='comment'># config/initializers/linkedin.rb
+</span><span class='const'>LinkedIn</span><span class='period'>.</span><span class='id configure'>configure</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id config'>config</span><span class='op'>|</span>
+  <span class='id config'>config</span><span class='period'>.</span><span class='id token'>token</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>consumer_token</span><span class='tstring_end'>'</span></span>
+  <span class='id config'>config</span><span class='period'>.</span><span class='id secret'>secret</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>consumer_secret</span><span class='tstring_end'>'</span></span>
+<span class='kw'>end</span></pre>
+    
+  </div>
+<h3>Yields:</h3>
+<ul class="yield">
+  
+    <li>
+      
+        <span class='type'>(<tt>_self</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+<h3>Yield Parameters:</h3>
+<ul class="yieldparam">
+  
+    <li>
+      
+        <span class='type'>(<tt><a href="" title="LinkedIn (module)">LinkedIn</a></tt>)</span>
+      
+      
+        <span class='name'>_self</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+the object that the method was called on
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+32
+33
+34
+35
+36
+37
+38</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/linkedin.rb', line 32</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id configure'>configure</span>
+  <span class='kw'>yield</span> <span class='kw'>self</span>
+
+  <span class='const'>LinkedIn</span><span class='period'>.</span><span class='id token'>token</span>  <span class='op'>=</span> <span class='id token'>token</span>
+  <span class='const'>LinkedIn</span><span class='period'>.</span><span class='id secret'>secret</span> <span class='op'>=</span> <span class='id secret'>secret</span>
+  <span class='kw'>true</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="secret-class_method">
+  
+    + (<tt>Object</tt>) <strong>secret</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+a getter for the secret
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+51
+52
+53</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/linkedin.rb', line 51</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id secret'>secret</span>
+  <span class='ivar'>@secret</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="secret=-class_method">
+  
+    + (<tt>Object</tt>) <strong>secret=</strong>(secret) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+a setter for the secret
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+56
+57
+58</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/linkedin.rb', line 56</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id secret='>secret=</span><span class='lparen'>(</span><span class='id secret'>secret</span><span class='rparen'>)</span>
+  <span class='ivar'>@secret</span> <span class='op'>=</span> <span class='id secret'>secret</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="token-class_method">
+  
+    + (<tt>Object</tt>) <strong>token</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+a getter for the token
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+41
+42
+43</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/linkedin.rb', line 41</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id token'>token</span>
+  <span class='ivar'>@token</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="token=-class_method">
+  
+    + (<tt>Object</tt>) <strong>token=</strong>(token) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+a setter for the token
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+46
+47
+48</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/linkedin.rb', line 46</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id token='>token=</span><span class='lparen'>(</span><span class='id token'>token</span><span class='rparen'>)</span>
+  <span class='ivar'>@token</span> <span class='op'>=</span> <span class='id token'>token</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Fri Jul 30 13:27:24 2010 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
+  0.5.8 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>
