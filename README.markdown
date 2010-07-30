@@ -7,12 +7,16 @@ Ruby wrapper for the [LinkedIn API](http://developer.linkedin.com). Heavily insp
     sudo gem install gemcutter
     gem tumble
     sudo gem install linkedin
+
+Or in your Gemfile, if you use bundler
+
+    gem linkedin
     
 ## Usage
 
 ### Authenticate
 
-LinkedIn's API uses Oauth for authentication. Luckily, the LinkedIn gem hides most of the gory details from you.
+LinkedIn's API uses Oauth for authentication. Luckily, the LinkedIn gem hides most of the gory details from you.  Test it out in IRB.
 
     require 'rubygems'
     require 'linkedin'
@@ -48,11 +52,13 @@ LinkedIn's API uses Oauth for authentication. Luckily, the LinkedIn gem hides mo
     client.profile(:url => 'http://www.linkedin.com/in/netherland')
     
 
-
 More examples in the [examples folder](http://github.com/pengwynn/linkedin/blob/master/examples).
 
-For a nice example on using this in a [Rails App](http://pivotallabs.com/users/will/blog/articles/1096-linkedin-gem-for-a-web-app).
+### Rails
 
+Are you using this gem with a rails project?  Check out this [example](http://pivotallabs.com/users/will/blog/articles/1096-linkedin-gem-for-a-web-app).
+
+If that post is down, check out examples/RailsReadMe.rb
 
 ## TODO
 
@@ -62,12 +68,16 @@ For a nice example on using this in a [Rails App](http://pivotallabs.com/users/w
  
 * Fork the project.
 * Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
+* Add tests for it. This is important so I don't break it in 
+  a future version unintentionally. 
 * Commit, do not mess with rakefile, version, or history.
   (if you want to have your own version, that is fine but
-   bump version in a commit by itself I can ignore when I pull)
+bump version in a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
+
+Please run your tests using bundler to ensure consistency
+
+    bundle exec rake
 
 ## Copyright
 
