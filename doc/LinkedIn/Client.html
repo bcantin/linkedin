@@ -259,7 +259,8 @@ For web apps use params[:oauth_verifier].
 
   
     <span class="summary_desc"><div class='inline'><p>
-usage:.
+The LinkedIn API can give us access to the profile&#8217;s birthdate If the
+profile does not contain a birthdate, then this will return nil.
 </p>
 </div></span>
   
@@ -290,7 +291,7 @@ usage:.
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#connections-instance_method" title="#connections (instance method)">- (Object) <strong>connections</strong>(options = {}) </a>
+      <a href="#connections-instance_method" title="#connections (instance method)">- (Array&lt;LinkedIn::Profile&gt;) <strong>connections</strong>(options = {}) </a>
     
 
     
@@ -303,7 +304,10 @@ usage:.
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'><p>
+The LinkedIn API also can give us access to the connections.
+</p>
+</div></span>
   
 </li>
 
@@ -366,7 +370,10 @@ usage:.
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'><p>
+Using a delete request, we can delete our status.
+</p>
+</div></span>
   
 </li>
 
@@ -490,7 +497,7 @@ Using a post request to linkedin, we can send messages.
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#profile-instance_method" title="#profile (instance method)">- (Object) <strong>profile</strong>(options = {}) </a>
+      <a href="#profile-instance_method" title="#profile (instance method)">- (LinkedIn::Profile) <strong>profile</strong>(options = {}) </a>
     
 
     
@@ -503,7 +510,10 @@ Using a post request to linkedin, we can send messages.
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'><p>
+Once we have our Client initialized, we can get the profile.
+</p>
+</div></span>
   
 </li>
 
@@ -524,7 +534,10 @@ Using a post request to linkedin, we can send messages.
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'><p>
+Using a put request to linkedin, we can update our status.
+</p>
+</div></span>
   
 </li>
 
@@ -1060,31 +1073,40 @@ verifier is the pin that LinkedIn gives users.
 </p><div class="docstring">
   <div class="discussion">
     <p>
-usage:
+The LinkedIn API can give us access to the profile&#8217;s birthdate If the
+profile does not contain a birthdate, then this will return nil
 </p>
-<pre class="code">
-   <span class='id dob'>dob</span> <span class='op'>=</span> <span class='id client'>client</span><span class='period'>.</span><span class='id birthdate'>birthdate</span>
-     <span class='id returns'>returns</span> <span class='id a'>a</span> <span class='id birthdate'>birthdate</span> <span class='id object'>object</span> <span class='id allowing'>allowing</span> <span class='id access'>access</span> <span class='id to'>to</span> <span class='id day'>day</span><span class='comma'>,</span> <span class='id month'>month</span><span class='comma'>,</span> <span class='id year'>year</span>
-     <span class='id dob'>dob</span><span class='period'>.</span><span class='id to_date'>to_date</span> <span class='id will'>will</span> <span class='kw'>return</span> <span class='id a'>a</span> <span class='const'>DATE</span> <span class='id object'>object</span></pre>
 
 
   </div>
 </div>
 <div class="tags">
   
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='id client'>client</span><span class='period'>.</span><span class='id birthdate'>birthdate</span><span class='period'>.</span><span class='id year'>year</span>         <span class='comment'># =&gt; 1980
+</span><span class='id client'>client</span><span class='period'>.</span><span class='id birthdate'>birthdate</span><span class='period'>.</span><span class='id month'>month</span>        <span class='comment'># =&gt; 12
+</span><span class='id client'>client</span><span class='period'>.</span><span class='id birthdate'>birthdate</span><span class='period'>.</span><span class='id day'>day</span>          <span class='comment'># =&gt; 22
+</span><span class='id client'>client</span><span class='period'>.</span><span class='id birthdate'>birthdate</span><span class='period'>.</span><span class='id to_date'>to_date</span>      <span class='comment'># =&gt; #&lt;Date: 1980-12-22&gt; (a date object)
+</span><span class='id client'>client</span><span class='period'>.</span><span class='id borthdate'>borthdate</span><span class='period'>.</span><span class='id to_date'>to_date</span><span class='period'>.</span><span class='id to_s'>to_s</span> <span class='comment'>#=&gt; &quot;1980-12-22&quot;</span></pre>
+    
+  </div>
+
 </div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-140
-141
-142
-143</pre>
+165
+166
+167
+168</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 140</span>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 165</span>
 
 <span class='kw'>def</span> <span class='id birthdate'>birthdate</span>
   <span class='id path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/people/~:(date-of-birth)</span><span class='tstring_end'>&quot;</span></span>
@@ -1108,13 +1130,13 @@ usage:
       <pre class="lines">
 
 
-168
-169
-170
-171</pre>
+193
+194
+195
+196</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 168</span>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 193</span>
 
 <span class='kw'>def</span> <span class='id clear_status'>clear_status</span>
   <span class='id path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/people/~/current-status</span><span class='tstring_end'>&quot;</span></span>
@@ -1128,36 +1150,90 @@ usage:
       <div class="method_details ">
   <p class="signature " id="connections-instance_method">
   
-    - (<tt>Object</tt>) <strong>connections</strong>(options = {}) 
+    - (<tt>Array&lt;<a href="Profile.html" title="LinkedIn::Profile (class)">LinkedIn::Profile</a>&gt;</tt>) <strong>connections</strong>(options = {}) 
   
 
   
-</p><table class="source_code">
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+The LinkedIn API also can give us access to the connections
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='id client'>client</span><span class='period'>.</span><span class='id connections'>connections</span><span class='lparen'>(</span><span class='rparen'>)</span></pre>
+    
+  </div>
+<h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <span class='name'>details</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+a customizable set of options
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Array&lt;<a href="Profile.html" title="LinkedIn::Profile (class)">LinkedIn::Profile</a>&gt;</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-121
-122
-123
-124
-125
-126
-127
-128
-129
-130
-131
-132
-133</pre>
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 121</span>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 144</span>
 
 <span class='kw'>def</span> <span class='id connections'>connections</span><span class='lparen'>(</span><span class='id options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id person_path'>person_path</span><span class='lparen'>(</span><span class='id options'>options</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='tstring_content'>/connections</span><span class='tstring_end'>&quot;</span></span>
-
   <span class='kw'>unless</span> <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:fields</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id nil?'>nil?</span>
     <span class='kw'>if</span> <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:public</span><span class='rbracket'>]</span>
       <span class='id path'>path</span> <span class='op'>+=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>:public</span><span class='tstring_end'>&quot;</span></span>
@@ -1165,7 +1241,6 @@ usage:
       <span class='id path'>path</span> <span class='op'>+=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>:(</span><span class='embexpr_beg'>#{</span><span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:fields</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id f'>f</span><span class='op'>|</span> <span class='id f'>f</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='period'>.</span><span class='id gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>_</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>,</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span>
     <span class='kw'>end</span>
   <span class='kw'>end</span>
-
   <span class='const'>Connections</span><span class='period'>.</span><span class='id from_xml'>from_xml</span><span class='lparen'>(</span><span class='id get'>get</span><span class='lparen'>(</span><span class='id path'>path</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='period'>.</span><span class='id profiles'>profiles</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -1214,13 +1289,13 @@ usage:
       <pre class="lines">
 
 
-153
-154
-155
-156</pre>
+178
+179
+180
+181</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 153</span>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 178</span>
 
 <span class='kw'>def</span> <span class='id current_status'>current_status</span>
   <span class='id path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/people/~/current-status</span><span class='tstring_end'>&quot;</span></span>
@@ -1238,21 +1313,85 @@ usage:
   
 
   
-</p><table class="source_code">
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Using a delete request, we can delete our status
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <span class='name'>path</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+a partial url path
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <span class='name'>options</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+      
+        
+        <div class='inline'><p>
+a HTTP response (200,404,500,&#8230;)
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-98
-99
-100
-101
-102
-103</pre>
+108
+109
+110
+111
+112
+113</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 98</span>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 108</span>
 
 <span class='kw'>def</span> <span class='id delete'>delete</span><span class='lparen'>(</span><span class='id path'>path</span><span class='comma'>,</span> <span class='id options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/v1</span><span class='embexpr_beg'>#{</span><span class='id path'>path</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
@@ -1322,6 +1461,25 @@ a way to narrow down the amount of detail returned
     </li>
   
 </ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+      
+        
+        <div class='inline'><p>
+the body of the response from linkedin
+</p>
+</div>
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -1329,15 +1487,15 @@ a way to narrow down the amount of detail returned
       <pre class="lines">
 
 
-72
 73
 74
 75
 76
-77</pre>
+77
+78</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 72</span>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 73</span>
 
 <span class='kw'>def</span> <span class='id get'>get</span><span class='lparen'>(</span><span class='id path'>path</span><span class='comma'>,</span> <span class='id options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/v1</span><span class='embexpr_beg'>#{</span><span class='id path'>path</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
@@ -1363,13 +1521,13 @@ a way to narrow down the amount of detail returned
       <pre class="lines">
 
 
-192
-193
-194
-195</pre>
+217
+218
+219
+220</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 192</span>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 217</span>
 
 <span class='kw'>def</span> <span class='id network_statuses'>network_statuses</span><span class='lparen'>(</span><span class='id options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:type</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>STAT</span><span class='tstring_end'>'</span></span>
@@ -1393,13 +1551,13 @@ a way to narrow down the amount of detail returned
       <pre class="lines">
 
 
-197
-198
-199
-200</pre>
+222
+223
+224
+225</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 197</span>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 222</span>
 
 <span class='kw'>def</span> <span class='id network_updates'>network_updates</span><span class='lparen'>(</span><span class='id options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/people/~/network</span><span class='tstring_end'>&quot;</span></span>
@@ -1490,7 +1648,7 @@ the message our user wants to send
       
         
         <div class='inline'><p>
-a HTTP responce (200,404,500,&#8230;)
+a HTTP response (200,404,500,&#8230;)
 </p>
 </div>
       
@@ -1504,15 +1662,15 @@ a HTTP responce (200,404,500,&#8230;)
       <pre class="lines">
 
 
-84
 85
 86
 87
 88
-89</pre>
+89
+90</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 84</span>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 85</span>
 
 <span class='kw'>def</span> <span class='id post'>post</span><span class='lparen'>(</span><span class='id path'>path</span><span class='comma'>,</span> <span class='id body'>body</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/v1</span><span class='embexpr_beg'>#{</span><span class='id path'>path</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
@@ -1528,38 +1686,98 @@ a HTTP responce (200,404,500,&#8230;)
       <div class="method_details ">
   <p class="signature " id="profile-instance_method">
   
-    - (<tt>Object</tt>) <strong>profile</strong>(options = {}) 
+    - (<tt><a href="Profile.html" title="LinkedIn::Profile (class)">LinkedIn::Profile</a></tt>) <strong>profile</strong>(options = {}) 
   
 
   
-</p><table class="source_code">
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Once we have our Client initialized, we can get the profile. From the
+profile, we then can access the linkedin API
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code"><span class='id client'>client</span><span class='period'>.</span><span class='id profile'>profile</span><span class='lparen'>(</span><span class='rparen'>)</span>
+<span class='id client'>client</span><span class='period'>.</span><span class='id profile'>profile</span><span class='lparen'>(</span><span class='symbol'>:public</span> <span class='op'>=&gt;</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='symbol'>:fields</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='symbol'>:first_name</span><span class='comma'>,</span> <span class='symbol'>:last_name</span><span class='rbracket'>]</span><span class='rparen'>)</span></pre>
+    
+  </div>
+<h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <span class='name'>details</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+a customizable set of options
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt><a href="Profile.html" title="LinkedIn::Profile (class)">LinkedIn::Profile</a></tt>)</span>
+      
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+A Profile object that will allow access to the LinkedIn API profile
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-106
-107
-108
-109
-110
-111
-112
-113
-114
-115
-116
-117
-118
-119</pre>
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 106</span>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 125</span>
 
 <span class='kw'>def</span> <span class='id profile'>profile</span><span class='lparen'>(</span><span class='id options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
-
   <span class='id path'>path</span> <span class='op'>=</span> <span class='id person_path'>person_path</span><span class='lparen'>(</span><span class='id options'>options</span><span class='rparen'>)</span>
-
   <span class='kw'>unless</span> <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:fields</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id nil?'>nil?</span>
     <span class='kw'>if</span> <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:public</span><span class='rbracket'>]</span>
       <span class='id path'>path</span> <span class='op'>+=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>:public</span><span class='tstring_end'>&quot;</span></span>
@@ -1567,7 +1785,6 @@ a HTTP responce (200,404,500,&#8230;)
       <span class='id path'>path</span> <span class='op'>+=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>:(</span><span class='embexpr_beg'>#{</span><span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:fields</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id f'>f</span><span class='op'>|</span> <span class='id f'>f</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='period'>.</span><span class='id gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>_</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>,</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span>
     <span class='kw'>end</span>
   <span class='kw'>end</span>
-
   <span class='const'>Profile</span><span class='period'>.</span><span class='id from_xml'>from_xml</span><span class='lparen'>(</span><span class='id get'>get</span><span class='lparen'>(</span><span class='id path'>path</span><span class='rparen'>)</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -1582,21 +1799,102 @@ a HTTP responce (200,404,500,&#8230;)
   
 
   
-</p><table class="source_code">
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Using a put request to linkedin, we can update our status
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <span class='name'>path</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+a partial url path
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'>(<tt>body</tt>)</span>
+      
+      
+        <span class='name'>body</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+the status update our user wants to send
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <span class='name'>options</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'></span>
+      
+      
+      
+      
+        
+        <div class='inline'><p>
+a HTTP response (200,404,500,&#8230;)
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-91
-92
-93
-94
-95
-96</pre>
+97
+98
+99
+100
+101
+102</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 91</span>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 97</span>
 
 <span class='kw'>def</span> <span class='id put'>put</span><span class='lparen'>(</span><span class='id path'>path</span><span class='comma'>,</span> <span class='id body'>body</span><span class='comma'>,</span> <span class='id options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/v1</span><span class='embexpr_beg'>#{</span><span class='id path'>path</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
@@ -1688,16 +1986,16 @@ authentication from linkedin.
       <pre class="lines">
 
 
-145
-146
-147
-148
-149
-150
-151</pre>
+170
+171
+172
+173
+174
+175
+176</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 145</span>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 170</span>
 
 <span class='kw'>def</span> <span class='id search'>search</span><span class='lparen'>(</span><span class='id options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/people</span><span class='tstring_end'>&quot;</span></span>
@@ -1724,27 +2022,27 @@ authentication from linkedin.
       <pre class="lines">
 
 
-173
-174
-175
-176
-177
-178
-179
-180
-181
-182
-183
-184
-185
-186
-187
-188
-189
-190</pre>
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 173</span>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 198</span>
 
 <span class='kw'>def</span> <span class='id send_message'>send_message</span><span class='lparen'>(</span><span class='id subject'>subject</span><span class='comma'>,</span> <span class='id body'>body</span><span class='comma'>,</span> <span class='id recipient_paths'>recipient_paths</span><span class='rparen'>)</span>
   <span class='id path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/people/~/mailbox</span><span class='tstring_end'>&quot;</span></span>
@@ -1812,13 +2110,13 @@ authentication from linkedin.
       <pre class="lines">
 
 
-163
-164
-165
-166</pre>
+188
+189
+190
+191</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 163</span>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 188</span>
 
 <span class='kw'>def</span> <span class='id update_comment'>update_comment</span><span class='lparen'>(</span><span class='id network_key'>network_key</span><span class='comma'>,</span> <span class='id comment'>comment</span><span class='rparen'>)</span>
   <span class='id path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/people/~/network/updates/key=</span><span class='embexpr_beg'>#{</span><span class='id network_key'>network_key</span><span class='rbrace'>}</span><span class='tstring_content'>/update-comments</span><span class='tstring_end'>&quot;</span></span>
@@ -1842,13 +2140,13 @@ authentication from linkedin.
       <pre class="lines">
 
 
-158
-159
-160
-161</pre>
+183
+184
+185
+186</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 158</span>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 183</span>
 
 <span class='kw'>def</span> <span class='id update_status'>update_status</span><span class='lparen'>(</span><span class='id text'>text</span><span class='rparen'>)</span>
   <span class='id path'>path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/people/~/current-status</span><span class='tstring_end'>&quot;</span></span>
@@ -1884,14 +2182,14 @@ file
       <pre class="lines">
 
 
-204
-205
-206
-207
-208</pre>
+229
+230
+231
+232
+233</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 204</span>
+      <pre class="code"><span class="info file"># File 'lib/linked_in/client.rb', line 229</span>
 
 <span class='kw'>def</span> <span class='id write_fixture'>write_fixture</span><span class='lparen'>(</span><span class='id path'>path</span><span class='comma'>,</span> <span class='id filename'>filename</span><span class='rparen'>)</span>
   <span class='id file'>file</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>test/fixtures/</span><span class='embexpr_beg'>#{</span><span class='id filename'>filename</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>w</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -1908,7 +2206,7 @@ file
 </div>
     
     <div id="footer">
-  Generated on Fri Jul 30 13:27:24 2010 by 
+  Generated on Sun Aug 15 09:12:24 2010 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool">yard</a>
   0.5.8 (ruby-1.9.2).
 </div>

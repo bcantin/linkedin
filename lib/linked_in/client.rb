@@ -69,6 +69,7 @@ module LinkedIn
     # Using a get request to linkedin, we can access the users information
     # @param path [String] a partial url path
     # @param options [Hash] a way to narrow down the amount of detail returned
+    # @return the body of the response from linkedin
     def get(path, options={})
       path = "/v1#{path}"
       response = access_token.get(path, options)
@@ -80,7 +81,7 @@ module LinkedIn
     # @param path [String] a partial url path
     # @param body= [String] the message our user wants to send
     # @param options [Hash]
-    # @return a HTTP responce (200,404,500,...)
+    # @return a HTTP response (200,404,500,...)
     def post(path, body='', options={})
       path = "/v1#{path}"
       response = access_token.post(path, body, options)
@@ -88,13 +89,22 @@ module LinkedIn
       response
     end
     
+    # Using a put request to linkedin, we can update our status
+    # @param path [String] a partial url path
+    # @param body [body] the status update our user wants to send
+    # @param options [Hash]
+    # @return a HTTP response (200,404,500,...)
     def put(path, body, options={})
       path = "/v1#{path}"
       response = access_token.put(path, body, options)
       raise_errors(response)
       response
     end
-
+    
+    # Using a delete request, we can delete our status
+    # @param path [String] a partial url path
+    # @param options [Hash]
+    # @return a HTTP response (200,404,500,...)
     def delete(path, options={})
       path = "/v1#{path}"
       response = access_token.delete(path, options)
@@ -103,10 +113,17 @@ module LinkedIn
     end
 
 
+    # Once we have our Client initialized, we can get the profile.
+    # From the profile, we then can access the linkedin API
+    #
+    # @option details [Array] :fields - Optional - Specific fields to return
+    # @option details [Boolean] :public - Optional - access the persons public profile or the details as they see when they are logged in.  Used when we access the Clients profile's connections (other people this person knows)
+    # @example
+    #  client.profile()
+    #  client.profile(:public => false, :fields => [:first_name, :last_name])
+    # @return [LinkedIn::Profile] A Profile object that will allow access to the LinkedIn API profile 
     def profile(options={})
-
       path = person_path(options)
-
       unless options[:fields].nil?
         if options[:public]
           path +=":public"
@@ -114,13 +131,18 @@ module LinkedIn
           path +=":(#{options[:fields].map{|f| f.to_s.gsub("_","-")}.join(',')})"
         end
       end
-
       Profile.from_xml(get(path))
     end
 
+    # The LinkedIn API also can give us access to the connections 
+    # 
+    # @option details [Array] :fields - Optional - Specific fields to return
+    # @option details [Boolean] :public - Optional - access the persons public profile or the details as they see when they are logged in.  Used when we access the Clients profile's connections (other people this person knows)
+    # @example
+    #  client.connections()
+    # @return [Array<LinkedIn::Profile>] 
     def connections(options={})
       path = "#{person_path(options)}/connections"
-
       unless options[:fields].nil?
         if options[:public]
           path +=":public"
@@ -128,15 +150,18 @@ module LinkedIn
           path +=":(#{options[:fields].map{|f| f.to_s.gsub("_","-")}.join(',')})"
         end
       end
-
       Connections.from_xml(get(path)).profiles
     end
 
-    ##
-    #  usage:
-    #    dob = client.birthdate
-    #      returns a birthdate object allowing access to day, month, year
-    #      dob.to_date will return a DATE object
+    # The LinkedIn API can give us access to the profile's birthdate
+    # If the profile does not contain a birthdate, then this will return nil
+    #
+    # @example
+    #  client.birthdate.year         # => 1980
+    #  client.birthdate.month        # => 12
+    #  client.birthdate.day          # => 22
+    #  client.birthdate.to_date      # => #<Date: 1980-12-22> (a date object)
+    #  client.borthdate.to_date.to_s #=> "1980-12-22"
     def birthdate
       path = "/people/~:(date-of-birth)"
       Birthdate.from_xml(get(path))

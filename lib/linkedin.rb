@@ -59,9 +59,7 @@ module LinkedIn
 end
 
 directory = File.expand_path(File.dirname(__FILE__))
-
 require File.join(directory, 'linked_in', 'base')
-
 require File.join(directory, 'linked_in', 'api_standard_profile_request')
 require File.join(directory, 'linked_in', 'url_resource')
 require File.join(directory, 'linked_in', 'company')

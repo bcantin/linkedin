@@ -1,11 +1,11 @@
 LICENSE 4c641d16b6c1534c7a8e6b29a08a4d46a0b85be9
-lib/linkedin.rb c9bfe4ef9d46e9023a184ff386c2072fa82daabc
+lib/linkedin.rb 5107bf7b1555e9b5c6f82e7babf0cb552f836aba
 lib/linked_in/base.rb be1985f56b8d3588006d5278529663195227034e
 lib/linked_in/group.rb afaeede1e5496f4e8e271dde75fff4187b08c30d
 lib/linked_in/error.rb acfec840fa59ca95ff948e5400d160e07590d0f7
 lib/linked_in/update.rb 967ef187d77fd81658ba1c176cc86c5309b2f15b
 lib/linked_in/person.rb 84a8be2cca6fa55bc04461821c918626bb146dc4
-lib/linked_in/client.rb bfc5580afc6e5afac2f22decaa94d9eeb9d86297
+lib/linked_in/client.rb 950a5edd8d2e0603dbea0feaf1e007a053c84241
 lib/linked_in/people.rb 889a70532d58c9d0ee540ca9f9b68b04458e0e79
 lib/linked_in/country.rb f519fcf2365de8f7e1028d48f7e8b3ac585e83ca
 lib/linked_in/profile.rb e128404bec197f4e3bd5f765fae632ded3656f69
